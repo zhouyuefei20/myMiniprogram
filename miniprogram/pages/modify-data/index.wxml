@@ -45,5 +45,5 @@ class="selectyear"
 </van-cell-group>
 <van-dialog id="van-dialog" class="btn"/>
 <view class="sub">
-<van-button type="info" bindtap='submit'>保存</van-button>
+<van-button type="info" bindtap='submit'>修改</van-button>
 </view>

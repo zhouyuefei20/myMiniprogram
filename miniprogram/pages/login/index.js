@@ -1,22 +1,32 @@
-let http = getApp().http;
-
+// miniprogram/pages/login/index.js
+let app=getApp();
+let http = app.http;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    arr:[]
+
   },
-  change(e){
-    console.log(e.detail);
+  quickLogin(res){
+    app.setUserinfo(res.detail.userInfo);
+    http('login',{
+      avatarUrl: res.detail.userInfo.avatarUrl
+    }).then(re=>{
+      if (!re.result.data.length){
+        http('adduser', res.detail.userInfo);
+      }
+    });
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
-    
+
   },
 
   /**
@@ -30,39 +40,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this, ar = [];
-    http('topic', {}, 'getVideo').then(res => {
-      console.log(res.result.data);
-      var data = res.result.data;
-      data.forEach((item, index) => {
-        wx.cloud.downloadFile({
-          fileID: item.fileID, // 文件 ID
-          success: res => {
-            // 返回临时文件路径
-            // console.log(res.tempFilePath)
-            ar.push(res.tempFilePath);
-            this.setData({
-              arr: ar
-            });
-          },
-          fail: console.error
-        })
+    http('login',{
+      username:'zhouyuefei'
+    }).then(res => {
+    //  console.log(res)
       })
-    });
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**

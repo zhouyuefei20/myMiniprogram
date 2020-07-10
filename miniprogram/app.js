@@ -46,6 +46,13 @@ App({
   },
   http,
   globalData:{
-    token:''
+    userinfo: wx.getStorageSync('userinfo')||''
+  },
+  setUserinfo:function(info){
+    this.globalData.userinfo = info;
+    wx.setStorageSync("userinfo", info);
+  },
+  getUserinfo: function () {
+    return this.globalData.userinfo;
   }
 })

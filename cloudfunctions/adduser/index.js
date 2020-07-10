@@ -11,12 +11,11 @@ exports.main = async(event, context) => {
     return await db.collection("users").add({
       // data 字段表示需新增的 JSON 数据
       data: {
-        username: event.username,
-        age: event.age,
-        password: event.password,
+        nickName: event.nickName,
+        gender: event.gender,
         city: event.city,
-        sex: event.sex,
-        phone: event.phone
+        province: event.province,
+        avatarUrl: event.avatarUrl
       }
     })
   } catch (e) {

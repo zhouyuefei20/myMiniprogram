@@ -1,0 +1,12 @@
+#video{
+  width: 100%;
+  display: inline-block;
+}
+.wrap{
+  height: 100vh;
+}
+.btn{
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-around;
+}

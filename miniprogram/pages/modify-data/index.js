@@ -24,6 +24,11 @@ Page({
     showpicker: false,
     monthpicker: false
   },
+  onCancelmon() {
+    this.setData({
+      monthpicker: false
+    })
+  },
   submit() {
     console.log(Value)
     var {
@@ -74,7 +79,7 @@ Page({
         });
     } else {
       wx.showLoading({
-        title: '正在保存',
+        title: '正在修改',
       });
       http('updatemoney', {
         beforemon: incomemonth,

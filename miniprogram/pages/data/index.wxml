@@ -1,8 +1,9 @@
+<wxs src="../../utils/tools.wxs" module="tools" />
+<view hidden="{{!flag}}">
 <view class="index" hidden='{{hasLoad}}'>
-
 <van-popup
   show="{{ showpicker }}"
-  position="bottom"
+  position="top"
   custom-style="height: 500rpx;overflow:hidden;"
   bind:close="onClose"
 >
@@ -11,7 +12,7 @@ class="selectyear"
  show-toolbar
   title="年份"
   columns="{{ columns }}"
-  default-index="{{ 0 }}"
+  default-index="{{ tools.valueToIndex(incomeyear,columns) }}"
    bind:cancel="onCancel"
   bind:confirm="onConfirm"
 />
@@ -45,4 +46,4 @@ class="selectyear"
   url="/pages/remove-data/index"
 />
 </view>
-
+</view>

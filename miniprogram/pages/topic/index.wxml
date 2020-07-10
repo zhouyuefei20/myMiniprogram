@@ -1,0 +1,8 @@
+
+<view class="wrap" hidden='{{!flag}}'>
+<video id='video' src='{{src}}'  autoplay='{{true}}' direction="0"></video>
+<view class="btn">
+<button type="warn" bindtap='retake'>重拍</button>
+<button type="primary" bindtap='fabu'>发布</button>
+</view>
+</view>

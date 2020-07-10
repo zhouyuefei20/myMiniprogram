@@ -1,25 +1,37 @@
 // miniprogram/pages/mine/index.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    flag:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '加载中',
+    });
+    if (!app.getUserinfo()) {
+      wx.reLaunch({
+        url: '/pages/login/index',
+      })
+    }else{
+      wx.hideLoading();
+      this.setData({
+        flag:true
+      })
+    }
   },
-
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

@@ -1,0 +1,10 @@
+<view class="index">
+<image src="../../images/logo.png" mode="widthFix"></image>
+</view>
+
+<view class="wx">
+<button class="quick" open-type="getUserInfo" bindgetuserinfo='quickLogin'></button>
+ <image src="../../images/wx.png" mode="widthFix"></image>
+ <view class="text">微信快捷登录</view>
+</view>
+

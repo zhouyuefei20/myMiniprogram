@@ -6,14 +6,10 @@ const db = cloud.database()
 //查询"附近拼单"
 exports.main = async (event, context) => {
   try {
-    //order
-    return await db.collection('users').where({
-      username: event.username
-    }).get({
-      success: function (res) {
-        return res
-      }
-    });
+    var res = await db.collection('users').where({
+      avatarUrl: event.avatarUrl
+    }).get();
+    return res;
   } catch (e) {
     console.error(e);
   }

@@ -1,4 +1,5 @@
 import * as echarts from '../../ec-canvas/echarts.js';
+let app = getApp();
 import {
   option
 } from '../../utils/echarts-option';
@@ -8,14 +9,15 @@ import {
 let http = getApp().http;
 let x = [],
   y = [];
-
 function initChart(canvas, width, height) {
+  console.log("进来");
   const chart = echarts.init(canvas, null, {
     width: width,
     height: height
   });
   canvas.setChart(chart);
-  chart.setOption(option(x, y));
+  console.log("执行", x, y);
+  chart.setOption(option(x, y),true,true);
   return chart;
 }
 Page({
@@ -28,6 +30,7 @@ Page({
     incomeAll: 0,
     percent: 0,
     hasLoad: true,
+    flag:false,
     columns: Array.from({
       length: 50
     }, (item, index) => {
@@ -58,7 +61,10 @@ Page({
     } = event.detail;
     this.setData({
       showpicker: false,
-      incomeyear: value
+      incomeyear: value,
+      ec:''
+    },()=>{
+      this.init(value);
     })
   },
 
@@ -72,8 +78,39 @@ Page({
       showpicker: true
     })
   },
+  init(year){
+    wx.showLoading({
+      title: '加载中',
+    })
+    http('updatemoney', {
+      year
+    }, 'getmoney').then(res => {
+     
+      var data = res.result.data;
+      x = data.map(function (item) {
+        return item.month;
+      });
+      y = data.map(function (item) {
+        return item.value
+      });
+      
+      this.setData({
+        ec: {
+          onInit: initChart
+        },
+        flag:true,
+        hasLoad: false,
+        incomeAll: sum(option(x, y).series[0].data) * 1000,
+        percent: option(x, y).series[0].data.length <= 6 ? 100 : option(x, y).series[0].data.length * 20
+      }, () => {
+        console.log(this.data);
+        wx.hideLoading();
+      });
+    });
+  },
   onLoad: function(options) {
-
+    
+    
   },
 
   /**
@@ -89,28 +126,16 @@ Page({
   onShow: function() {
     wx.showLoading({
       title: '加载中',
-    })
-    http('updatemoney', {
-      year: 2020
-    }, 'getmoney').then(res => {
-      var data = res.result.data;
-      x = data.map(function(item) {
-        return item.month;
-      });
-      y = data.map(function(item) {
-        return item.value
-      });
-      this.setData({
-        ec: {
-          onInit: initChart
-        },
-        hasLoad: false,
-        incomeAll: sum(option(x, y).series[0].data) * 1000,
-        percent: option(x, y).series[0].data.length <= 3 ? 100 : option(x, y).series[0].data.length * 30
-      }, () => {
-        wx.hideLoading();
-      });
     });
+    if (!app.getUserinfo()) {
+      wx.reLaunch({
+        url: '/pages/login/index',
+      })
+    }
+    else {
+      wx.hideLoading();
+      this.init(new Date().getFullYear());
+    }
   },
 
   /**

@@ -14,13 +14,15 @@ exports.main = async(event, context) => {
           data: {
             month: event.month,
             value: event.value,
-            year: event.year
+            year: event.year,
+            avatarUrl: event.avatarUrl
           }
         });
       case 'updatemoney':
         return await db.collection("money").where({
           month: event.beforemon,
-          year: event.beforeyear
+          year: event.beforeyear,
+          avatarUrl: event.avatarUrl
         }).update({
           data: {
             value: event.value
@@ -28,17 +30,20 @@ exports.main = async(event, context) => {
         });
       case 'getmoney':
         return await db.collection("money").where({
-          year: event.year
+          year: event.year,
+          avatarUrl: event.avatarUrl
         }).get();
       case 'getmoneyone':
         return await db.collection("money").where({
           year: event.year,
-          month:event.month
+          month:event.month,
+          avatarUrl: event.avatarUrl
         }).get();
       case 'removemoney':
         return await db.collection("money").where({
           year: event.year,
-          month:event.month
+          month:event.month,
+          avatarUrl: event.avatarUrl
         }).remove();
       default:
         return;

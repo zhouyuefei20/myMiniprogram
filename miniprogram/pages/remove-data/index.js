@@ -22,6 +22,11 @@ Page({
     showpicker: false,
     monthpicker: false
   },
+  onCancelmon() {
+    this.setData({
+      monthpicker: false
+    })
+  },
   submit() {
     var {
       incomeyear,
@@ -140,7 +145,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    Value = '';
+  
   },
 
   /**

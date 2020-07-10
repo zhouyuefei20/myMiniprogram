@@ -4,8 +4,9 @@ return new Promise(function(resolve,reject){
   wx.cloud.callFunction({
     name,
     data: {
+      action: action||'',
+      avatarUrl: wx.getStorageSync('userinfo') ? wx.getStorageSync('userinfo').avatarUrl:'',
       ...data,
-      action,
     },
     success: res => {
       resolve(res);

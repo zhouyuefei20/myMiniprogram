@@ -55,18 +55,42 @@
 					"id": -1,
 					"name": "添加数据",
 					"pathName": "pages/add-data/index",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "修改数据",
 					"pathName": "pages/modify-data/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "删除数据",
+					"pathName": "pages/remove-data/index",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/remove-data/index",
-					"pathName": "pages/remove-data/index",
+					"name": "我的",
+					"pathName": "pages/mine/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拍摄",
+					"pathName": "pages/topic/index",
+					"query": "",
 					"scene": null
 				}
 			]

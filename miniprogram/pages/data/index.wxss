@@ -21,3 +21,6 @@ color: transparent;
 .van-picker{
   height: 100%;
 }
+canvas{
+  display: block !important;
+}

@@ -73,7 +73,7 @@ Page({
     } else {
       http('updatemoney',{
         month: incomemonth,
-        value: Number(Value)
+        year: Number(incomeyear)
       },'getmoneyone').then(res => {
         console.log(res);
         if(!res.result.data.length){
@@ -150,7 +150,11 @@ Page({
       incomemonth: value
     })
   },
-
+  onCancelmon(){
+    this.setData({
+      monthpicker: false
+    })
+  },
   onCancel() {
     this.setData({
       showpicker: false
