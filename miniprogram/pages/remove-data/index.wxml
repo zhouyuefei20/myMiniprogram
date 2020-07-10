@@ -1,0 +1,40 @@
+<van-popup
+  show="{{ showpicker }}"
+  position="bottom"
+  custom-style="height: 500rpx;overflow:hidden;"
+  bind:close="onClose"
+>
+<van-picker wx:if='{{showpicker}}'
+class="selectyear"
+ show-toolbar
+  title="年份"
+  columns="{{ columns }}"
+  default-index="{{ 0 }}"
+   bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>
+</van-popup>
+<van-popup
+  show="{{ monthpicker }}"
+  position="bottom"
+  custom-style="height: 500rpx;overflow:hidden;"
+  bind:close="onClosemon"
+>
+<van-picker wx:if='{{monthpicker}}'
+class="selectyear"
+ show-toolbar
+  title="月份"
+  columns="{{ columnsmon }}"
+  default-index="{{ 0 }}"
+   bind:cancel="onCancelmon"
+  bind:confirm="onConfirmmon"
+/>
+</van-popup>
+<van-cell-group>
+  <van-cell title="年份" value="{{incomeyear}}" bind:click="selectYear"/>
+  <van-cell title="月份" value="{{incomemonth}}" bind:click="selectMonth"/>
+</van-cell-group>
+<van-dialog id="van-dialog" class="btn"/>
+<view class="sub">
+<van-button type="info" bindtap='submit'>删除</van-button>
+</view>

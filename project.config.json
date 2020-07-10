@@ -1,0 +1,75 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"enhance": true
+	},
+	"appid": "wxc80939ca3b044c50",
+	"projectname": "%E7%B2%A4%E6%95%B0%E6%8D%AE",
+	"libVersion": "2.8.1",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "数据分析",
+					"pathName": "pages/data/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加数据",
+					"pathName": "pages/add-data/index",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改数据",
+					"pathName": "pages/modify-data/index",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/remove-data/index",
+					"pathName": "pages/remove-data/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

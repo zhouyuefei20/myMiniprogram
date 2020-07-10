@@ -1,0 +1,54 @@
+{
+  "usingComponents": {
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+    "van-field": "/miniprogram_npm/vant-weapp/field/index",
+    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index",
+    "van-picker": "/miniprogram_npm/vant-weapp/picker/index",
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "ec-canvas": "/ec-canvas/ec-canvas"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/mine/index",
+    "pages/data/index",
+    "pages/add-data/index",
+    "pages/modify-data/index",
+    "pages/remove-data/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6495ED",
+    "navigationBarTitleText": "粤数据",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "backgroundColor": "#6495ED",
+    "selectedColor": "#ffffff",
+    "color": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index0.png",
+        "selectedIconPath": "/images/index1.png"
+      },
+      {
+        "pagePath": "pages/data/index",
+        "text": "分析",
+        "iconPath": "/images/data0.png",
+        "selectedIconPath": "/images/data1.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "/images/mine0.png",
+        "selectedIconPath": "/images/mine1.png"
+      }
+    ]
+  }
+}

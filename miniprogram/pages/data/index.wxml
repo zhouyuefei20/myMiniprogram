@@ -1,0 +1,48 @@
+<view class="index" hidden='{{hasLoad}}'>
+
+<van-popup
+  show="{{ showpicker }}"
+  position="bottom"
+  custom-style="height: 500rpx;overflow:hidden;"
+  bind:close="onClose"
+>
+<van-picker wx:if='{{showpicker}}'
+class="selectyear"
+ show-toolbar
+  title="年份"
+  columns="{{ columns }}"
+  default-index="{{ 0 }}"
+   bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>
+</van-popup>
+<van-cell-group>
+  <van-cell title="{{incomeyear}}年收入总额" value="{{incomeAll}} 元" bindtap="selectyear"/>
+</van-cell-group>
+
+<scroll-view scroll-x="true" style="width: 100%">
+  <view class="container" style="width:{{percent}}%">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}" wx:if='{{ec}}'></ec-canvas>
+</view> 
+</scroll-view>
+
+<van-cell
+  is-link
+  title="添加记录"
+  link-type="navigateTo"
+  url="/pages/add-data/index"
+/>
+<van-cell
+  is-link
+  title="修改记录"
+  link-type="navigateTo"
+  url="/pages/modify-data/index"
+/>
+<van-cell
+  is-link
+  title="删除记录"
+  link-type="navigateTo"
+  url="/pages/remove-data/index"
+/>
+</view>
+

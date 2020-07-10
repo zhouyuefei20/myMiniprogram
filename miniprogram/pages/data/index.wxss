@@ -1,0 +1,23 @@
+.wrap{
+overflow-x: auto;
+}
+.container{
+  height:600rpx;
+  padding-left:10rpx;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.selectyear{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.van-picker{
+  height: 100%;
+}
