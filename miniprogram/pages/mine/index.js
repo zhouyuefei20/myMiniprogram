@@ -1,12 +1,15 @@
 // miniprogram/pages/mine/index.js
 let app = getApp();
+import songs from '../../utils/songs.js';
+console.log(songs);
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:false
+    flag:false,
+    songs: songs
   },
 
   /**
@@ -33,12 +36,35 @@ Page({
    */
   onReady: function () {
   },
-
+format(str,flag){
+  var arr=str.split('?');
+if(!flag){
+  return arr[0];
+}
+else{
+  var brr=arr[1].split('&'),obj={};
+  for(var i in brr){
+    obj[brr[i].split('=')[0]] = brr[i].split('=')[1];
+  }
+return obj;
+}
+},
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var str ='http://mobilecdnbj.kugou.com/api/v3/tag/recommend?showtype=3&apiver=2&plat=0';
+    //console.log(this.format(str,1));
+    wx.request({
+      url: this.format(str, 0), //仅为示例，并非真实的接口地址
+      data:this.format(str, 1),
+      success: function (res) {
+        console.log(res);
+      },
+      fail(err){
+        console.log(err);
+      }
+    })
   },
 
   /**

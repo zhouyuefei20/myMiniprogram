@@ -32,9 +32,8 @@ Page({
   onShow: function () {
     var that = this, ar = [];
     http('topic', {}, 'getVideo').then(res => {
-      console.log(res.result.data);
-      var data = res.result.data;
-      data.forEach((item, index) => {
+      var data = res.result && res.result.data;
+      data  &&  data.forEach((item, index) => {
         wx.cloud.downloadFile({
           fileID: item.fileID, // 文件 ID
           success: res => {

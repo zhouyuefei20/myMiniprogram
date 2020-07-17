@@ -1,2 +1,4 @@
 <!--miniprogram/pages/mine/index.wxml-->
-<text hidden="{{!flag}}">miniprogram/pages/mine/index.wxml</text>
+
+<audio wx:for='{{songs}}' wx:key='index' name='{{item.songName}}' author='{{item.singer}}'
+src="{{item.src}}" id="myAudio" controls loop poster='{{item.imgsrc}}'></audio>

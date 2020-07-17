@@ -1,1 +1,3 @@
-/* miniprogram/pages/mine/index.wxss */
+audio{
+  width: 100%;
+}
