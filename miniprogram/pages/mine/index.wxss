@@ -1,3 +1,36 @@
-audio{
-  width: 100%;
+.index{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.footer{
+  height: 134rpx;
+  display: flex;
+  align-items: center;
+}
+.footer audio{
+  flex: 1;
+}
+.next{
+  width: 134rpx;
+  line-height: 134rpx;
+  text-align: center;
+  height: 100%;
+  border-top: 2rpx solid whitesmoke;
+  color: #4fc08d;
+}
+.main{
+  flex:1;
+  overflow: auto;
+ border-top: 2rpx solid whitesmoke;
+}
+.list{
+  height: 100rpx;
+  border-bottom: 2rpx solid whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10rpx;
 }

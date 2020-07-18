@@ -1,4 +1,22 @@
-<!--miniprogram/pages/mine/index.wxml-->
 
-<audio wx:for='{{songs}}' wx:key='index' name='{{item.songName}}' author='{{item.singer}}'
-src="{{item.src}}" id="myAudio" controls loop poster='{{item.imgsrc}}'></audio>
+<view class="index">
+<van-search
+  value="{{ value }}"
+  shape="round"
+  background="gray"
+  placeholder="请输入搜索关键词"
+  bind:change='search'
+  bind:clear='clear'
+/>
+<view class="main">
+<view  class="list" wx:for='{{songs}}' wx:key='index' data-info='{{item}}' data-index='{{index}}' catchtap="play" style='background:{{item.bg}};color:{{item.col}}'>
+<text>{{item.songName}}</text>
+<text>{{item.singer}}</text>
+</view>
+</view>
+<!-- <view class="footer">
+<audio name='{{songName}}' author='{{singer}}' bindended='bindended' bindtimeupdate='bindtimeupdate'
+src="{{src}}" id="myAudio" controls poster='{{imgsrc}}' bindtap="tap"></audio>
+<view class="next" bindtap="next">下一首</view>
+</view> -->
+</view>

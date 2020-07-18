@@ -1,4 +1,5 @@
 {
+  "requiredBackgroundModes":["audio"],
   "usingComponents": {
     "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
     "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
@@ -7,7 +8,8 @@
     "van-picker": "/miniprogram_npm/vant-weapp/picker/index",
     "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
     "van-button": "/miniprogram_npm/vant-weapp/button/index",
-    "ec-canvas": "/ec-canvas/ec-canvas"
+    "ec-canvas": "/ec-canvas/ec-canvas",
+    "van-search": "/miniprogram_npm/vant-weapp/search/index"
   },
   "pages": [
     "pages/index/index",
@@ -22,14 +24,14 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#6495ED",
+    "navigationBarBackgroundColor": "#4fc08d",
     "navigationBarTitleText": "粤数据",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
-    "backgroundColor": "#6495ED",
+    "backgroundColor": "#4fc08d",
     "selectedColor": "#ffffff",
     "color": "#000000",
     "list": [
@@ -53,7 +55,7 @@
       },
       {
         "pagePath": "pages/mine/index",
-        "text": "我的",
+        "text": "音乐",
         "iconPath": "/images/mine0.png",
         "selectedIconPath": "/images/mine1.png"
       }
