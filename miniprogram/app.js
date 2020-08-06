@@ -8,6 +8,7 @@ App({
     } else {
 		console.log('你好mini_a');
     console.log('是谁');
+      console.log('是谁1');
       wx.cloud.init({
         // env 参数说明：
         //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
