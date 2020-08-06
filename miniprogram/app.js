@@ -6,8 +6,8 @@ App({
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
-		console.log('你好mini_a');
-    console.log('是谁');
+      console.log('你好mini_a');
+      console.log('是谁');
       console.log('是谁000');
       wx.cloud.init({
         // env 参数说明：
@@ -18,40 +18,40 @@ App({
         traceUser: true,
       })
     };
-   /*  wx.cloud.callFunction({
-      name: 'login',
-      data:{
-        username:"zhouyuefei"
-      },
-      complete: res => {
-        console.log("***orderQuery",res);
-      }
-    }); */
+    /*  wx.cloud.callFunction({
+       name: 'login',
+       data:{
+         username:"zhouyuefei"
+       },
+       complete: res => {
+         console.log("***orderQuery",res);
+       }
+     }); */
 
-   /*  wx.cloud.callFunction({
-      name: 'adduser',
-      data: {
-        username: "huang",
-        age: 12,
-        password: "123",
-        city: "北京",
-        sex: "女",
-        phone: "1321146123"
-      },
-      complete: res => {
-        console.log("成功", res);
-      }
-    }); */
-     
-    
-   
+    /*  wx.cloud.callFunction({
+       name: 'adduser',
+       data: {
+         username: "huang",
+         age: 12,
+         password: "123",
+         city: "北京",
+         sex: "女",
+         phone: "1321146123"
+       },
+       complete: res => {
+         console.log("成功", res);
+       }
+     }); */
+
+
+
 
   },
   http,
-  globalData:{
-    userinfo: wx.getStorageSync('userinfo')||''
+  globalData: {
+    userinfo: wx.getStorageSync('userinfo') || ''
   },
-  setUserinfo:function(info){
+  setUserinfo: function (info) {
     this.globalData.userinfo = info;
     wx.setStorageSync("userinfo", info);
   },
